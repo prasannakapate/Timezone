@@ -1,0 +1,20 @@
+{
+  "name": "timezone",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Prasanna Kapate <prasanna.1616@gmail.com>"
+  ],
+  "description": "timezone using moment.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment-timezone": "~0.4.0"
+  }
+}
