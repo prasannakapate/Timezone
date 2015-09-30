@@ -16,7 +16,7 @@
     console.log("Daylight saving time shift: ", dstShiftStatus);
     console.log("It is a Daylight saving time :", dstShiftStatus);
 
-    if (dstShiftStatus && isDST) {
+    if (dstShiftStatus === true && isDST === true) {
         console.log("Show Me Daylight Saving Time");
         currentTimezoneDate = moment.tz([2012, 5], 'America/New_York').zoneAbbr();
         console.log(currentTimezoneDate);
@@ -36,7 +36,13 @@
 
             //get text from divUTC and convert to local timezone  
             var localTime = moment.utc(divUtc.text()).toDate();
-            localTime = moment(localTime).format('YYYY-MM-DD HH:mm:ss');
+            localTime = moment(localTime).format('dddd, MMMM Do YYYY, h:mm:ss a"');
+
+            // moment().format();                                // "2014-09-08T08:02:17-05:00" (ISO 8601)
+            // moment().format("dddd, MMMM Do YYYY, h:mm:ss a"); // "Sunday, February 14th 2010, 3:25:50 pm"
+            // moment().format("ddd, hA");                       // "Sun, 3PM"
+            // moment('gibberish').format('YYYY MM DD');         // "Invalid date"
+            
             divLocal.text(localTime);
         }, 1000);
     });
